@@ -1,0 +1,12 @@
+{
+  "name": "@wioenena/context",
+  "version": "1.0.0",
+  "license": "MIT",
+  "exports": "./src/mod.ts",
+  "publish": {
+    "include": ["src/**/*.ts","./README.md"]
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1"
+  }
+}
