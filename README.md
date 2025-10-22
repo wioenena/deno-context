@@ -9,7 +9,7 @@ This document provides an overview of the custom context library implemented in 
 - [Context](#context)
 - [CancelableContext](#cancelablecontext)
 - [DeadlineContext](#deadlinecontext)
-- [Utility Functions](#utility-functions)
+- [Utility Functions](#utility-function)
   - [withCancel](#withcancel)
   - [withTimeout](#withtimeout)
 - [Tests](#tests)
@@ -22,7 +22,7 @@ This document provides an overview of the custom context library implemented in 
 `Context` is the base class for managing request-scoped values, cancellation signals, and deadlines.
 
 ### Constructor
-```ts
+```typescript
 constructor(parent: Context | null)
 ```
 - `parent`: The parent context, or `null` for a root context.
@@ -41,7 +41,7 @@ constructor(parent: Context | null)
 `CancelableContext` extends `Context` and allows explicit cancellation.
 
 ### Constructor
-```ts
+```typescript
 constructor(parent: Context)
 ```
 - `parent`: The parent context.
@@ -64,7 +64,7 @@ constructor(parent: Context)
 - `CancelFunc = (cause?: string) => void`
 
 ### Utility Function
-```ts
+```typescript
 withCancel(parent: Context): [CancelableContext, CancelFunc]
 ```
 Creates a `CancelableContext` from a parent and returns it with a cancel function.
@@ -76,7 +76,7 @@ Creates a `CancelableContext` from a parent and returns it with a cancel functio
 `DeadlineContext` extends `CancelableContext` and adds support for automatic cancellation after a timeout.
 
 ### Constructor
-```ts
+```typescript
 constructor(parent: Context, timeoutMs: number)
 ```
 - `parent`: The parent context.
@@ -92,7 +92,7 @@ constructor(parent: Context, timeoutMs: number)
 - `clearTimeout()`: Clears the timeout timer.
 
 ### Utility Function
-```ts
+```typescript
 withTimeout(parent: Context, timeoutMs: number): [DeadlineContext, CancelFunc]
 ```
 Creates a `DeadlineContext` with a specified timeout.
@@ -123,8 +123,8 @@ The library includes comprehensive tests using Deno's testing framework.
 
 ## Usage Example
 
-```ts
-import { Context, withCancel, withTimeout } from './mod.ts';
+```typescript
+import { Context, withCancel, withTimeout } from '@wioenena/context';
 
 // Basic cancelable context
 const [ctx, cancel] = withCancel(Context.todo());
