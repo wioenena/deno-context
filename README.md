@@ -10,8 +10,8 @@ This document provides an overview of the custom context library implemented in 
 - [CancelableContext](#cancelablecontext)
 - [DeadlineContext](#deadlinecontext)
 - [Utility Functions](#utility-function)
-  - [withCancel](#withcancel)
-  - [withTimeout](#withtimeout)
+  - [withCancel](#utility-function)
+  - [withTimeout](#utility-function-1)
 - [Tests](#tests)
 - [Usage Example](#usage-example)
 
